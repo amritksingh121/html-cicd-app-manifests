@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-cicd-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: html-cicd-app
+  template:
+    metadata:
+      labels:
+        app: html-cicd-app
+    spec:
+      containers:
+      - name: html-cicd-app
+        image: amritksingh121/html-cicd-app:latest
+        ports:
+        - containerPort: 80
